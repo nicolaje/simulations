@@ -1,5 +1,6 @@
 import logging; logger = logging.getLogger("morse." + __name__)
 import morse.core.robot
+from math import acos, sqrt
 
 class Saucisse(morse.core.robot.Robot):
     _name = 'saucisse robot'
@@ -32,7 +33,9 @@ class Saucisse(morse.core.robot.Robot):
         # if robot is partially underwater, assumes Archimedes force varies linearly with its immersion
         delta = self.position_3d.z - self._sea_level
         if  delta <self._radius and delta > -self._radius:
-            force[2]+=self.bge_object.mass*9.81*(1-delta/self._radius)/2
+            h_imm=self._radius - delta
+            vol_imm=self._radius**2*acos((self._radius-h_imm)/self._radius)-(self._radius-h_imm)*sqrt(2*self._radius*h_imm-h_imm**2)*1/(0.1**2*3.14*1)
+            force[2]+=self.bge_object.mass*9.81
         elif self.position_3d.z - self._sea_level < -self._radius:
             force[2]+=1.1*self.bge_object.mass*9.81
 
