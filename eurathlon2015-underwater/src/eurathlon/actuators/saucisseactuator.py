@@ -56,7 +56,7 @@ class Saucisseactuator(morse.core.actuator.Actuator):
 
         Implements the component behaviour
         """
-
+        #self.bge_object.applyMovement([0,-1,100],False)
         # check if we have an on-going asynchronous tasks...
         if self._target_count and self.local_data['counter'] > self._target_count:
             self.completed(status.SUCCESS, self.local_data['counter'])
