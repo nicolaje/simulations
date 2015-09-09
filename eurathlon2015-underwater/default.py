@@ -3,6 +3,9 @@
 from eurathlon.builder.robots import *
 from eurathlon.builder.actuators import *
 from morse.builder import *
+import os
+
+os.sys.path.append(os.path.realpath(__file__)+"/eurathlon2015-underwater/data/eurathlon/environment/")
 
 robot = Lejaune()
 saucisse = Saucisse()
@@ -14,6 +17,6 @@ saucisse.translate(10,0,2.7)
 
 robot.add_default_interface('socket')
 
-env = Environment('map.blend', fastmode = False)
+env = Environment('../data/eurathlon/environment/map.blend', fastmode = False)
 env.set_camera_location([-18.0, -6.7, 10.8])
 env.set_camera_rotation([1.09, 0, -1.14])
