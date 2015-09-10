@@ -5,8 +5,6 @@ from eurathlon.builder.actuators import *
 from morse.builder import *
 import os
 
-os.sys.path.append(os.path.realpath(__file__)+"/eurathlon2015-underwater/data/eurathlon/environment/")
-
 jaune = Lejaune()
 saucisse = Saucisse()
 
