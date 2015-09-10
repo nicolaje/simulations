@@ -7,6 +7,7 @@ import os
 
 jaune = Lejaune()
 saucisse = Saucisse()
+saucisse.properties(SeaLevel=0.7)
 
 jaune.translate(1.0, 0.0, 0.7)
 jaune.rotate(0.0, 0.0, 0)
