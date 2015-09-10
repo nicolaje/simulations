@@ -7,5 +7,5 @@ class Saucisse(GroundRobot):
     def __init__(self, name = None, debug = True):
 
         # saucisse.blend is located in the data/robots directory
-        GroundRobot.__init__(self, 'eurathlon/robots/saucisse 2.blend', name)
+        GroundRobot.__init__(self, 'eurathlon/robots/saucisse.blend', name)
         self.properties(classpath = "eurathlon.robots.saucisse.Saucisse")

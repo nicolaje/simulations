@@ -7,15 +7,17 @@ import os
 
 os.sys.path.append(os.path.realpath(__file__)+"/eurathlon2015-underwater/data/eurathlon/environment/")
 
-robot = Lejaune()
+jaune = Lejaune()
 saucisse = Saucisse()
 
-robot.translate(1.0, 0.0, 0.7)
-robot.rotate(0.0, 0.0, 3.5)
+jaune.translate(1.0, 0.0, 0.7)
+jaune.rotate(0.0, 0.0, 0)
 
-saucisse.translate(10,0,2.7)
+saucisse.translate(10,0,0.7)
+saucisse.rotate(0,0,0)
 
-robot.add_default_interface('socket')
+jaune.add_default_interface('socket')
+saucisse.add_default_interface('socket')
 
 env = Environment('../data/eurathlon/environment/map.blend', fastmode = False)
 env.set_camera_location([-18.0, -6.7, 10.8])
