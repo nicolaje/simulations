@@ -9,7 +9,7 @@ from morse.builder import *
 from morse.helpers.coordinates import CoordinateConverter
 
 jaune = Lejaune()
-jaune.translate(x=-150,y=300,z=0.7)
+jaune.translate(x=0,y=-2,z=0.7)
 
 tritech=Tritechmicron()
 tritech.rotate(z=3.14/2)
@@ -38,7 +38,7 @@ jaune.append(gps)
 jaune.add_default_interface('socket')
 
 env = Environment('../data/eurathlon/environment/map.blend', fastmode = False)
-env.set_camera_location([-18.0-150, -6.7+330, 10.8])
+env.set_camera_location([-18.0, 6, 10.8])
 env.set_camera_rotation([1.09, 0, -3*3.14/4])
 env.set_camera_clip(clip_start=0.1, clip_end=2000)
 env.set_camera_speed(speed=4)
