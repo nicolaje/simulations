@@ -18,3 +18,4 @@ class Tritechmicron(LaserSensorWithArc):
                 scan_window = 20.0, resolution = 1.0)
         # set the frequency to 10 Hz
         self.frequency(10)
+        self.add_stream('moos','eurathlon.sensors.tritechmicronpublisher.TritechMicronPublisher',moos_port=9000)
