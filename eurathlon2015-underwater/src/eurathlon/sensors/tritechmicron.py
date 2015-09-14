@@ -22,9 +22,8 @@ class Tritechmicron(LaserScanner):
     add_data('range', 0.0, 'float', 'Range detected by the sonar. It is the mean range of the range_list data.')
     add_data('incidence', 0.0, 'float', 'Incidence of the beam that measured the range. ')
 
-    add_property('angle_per_ping',9,'angle_per_ping',"float","The angle jump between two pings, in degrees.")
-    add_property('ping_per_second',7,'ping_per_second',"float","The number of ping per second.")
-    add_property('scan_coverage',90,'scan_coverage',"float","The width of the zone to be covered by the sonar, in degrees.")
+    add_property('angle_per_ping',6,'angle_per_ping',"float","The angle jump between two pings, in degrees.")
+    add_property('scan_coverage',120,'scan_coverage',"float","The width of the zone to be covered by the sonar, in degrees.")
 
     def __init__(self, obj, parent=None):
         logger.info("%s initialization" % obj.name)
@@ -67,7 +66,7 @@ class Tritechmicron(LaserScanner):
     def default_action(self):
         LaserScanner.default_action(self)
         self.local_data['range']=min(self.local_data['range_list'])
-        self.local_data['incidence']=self._rot
+        self.local_data['incidence']=self._rot+90-self.scan_coverage/2
         self.bge_object.applyRotation([0,radians(self.angle_per_ping),0],True)
         self._rot+=self.angle_per_ping
         if self._rot > self.scan_coverage :

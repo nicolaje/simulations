@@ -15,7 +15,7 @@ class Tritechmicron(LaserSensorWithArc):
         self.append(mesh)
         # set components-specific properties
         self.properties(Visible_arc = True, laser_range = 40.0,
-                scan_window = 20.0, resolution = 1.0)
+                scan_window = 10.0, resolution = 1.0)
         # set the frequency to 10 Hz
-        self.frequency(10)
+        self.frequency(25)
         self.add_stream('moos','eurathlon.sensors.tritechmicronpublisher.TritechMicronPublisher',moos_port=9000)
