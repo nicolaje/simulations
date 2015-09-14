@@ -8,6 +8,7 @@ from morse.helpers.components import add_data, add_property
 from morse.sensors.laserscanner import LaserScanner
 from morse.builder import bpymorse
 from math import radians
+from numpy import mean
 import bpy
 
 class Tritechmicron(LaserScanner):
@@ -65,7 +66,7 @@ class Tritechmicron(LaserScanner):
 
     def default_action(self):
         LaserScanner.default_action(self)
-        self.local_data['range']=min(self.local_data['range_list'])
+        self.local_data['range']=mean(self.local_data['range_list'])
         self.local_data['incidence']=self._rot+90-self.scan_coverage/2
         self.bge_object.applyRotation([0,radians(self.angle_per_ping),0],True)
         self._rot+=self.angle_per_ping

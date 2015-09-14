@@ -13,6 +13,7 @@ jaune.translate(x=0,y=-2,z=-0.2)
 
 tritech=Tritechmicron()
 tritech.rotate(z=3.14/2)
+tritech.properties(scan_coverage=160)
 tritech.frequency(20)
 jaune.append(tritech)
 
