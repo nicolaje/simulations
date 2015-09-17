@@ -2,9 +2,9 @@
 # In this mission, we acquire the elevation map with the
 # Lejaune robot
 
-from eurathlon2015-underwater.builder.robots import *
-from eurathlon2015-underwater.builder.actuators import *
-from eurathlon2015-underwater.builder.sensors import Tritechmicron
+from eurathlon2015underwater.builder.robots import *
+from eurathlon2015underwater.builder.actuators import *
+from eurathlon2015underwater.builder.sensors import Tritechmicron
 from morse.builder import *
 from morse.helpers.coordinates import CoordinateConverter
 
@@ -16,7 +16,7 @@ tritech.rotate(z=3.14/2)
 jaune.append(tritech)
 
 pose = Pose()
-pose.add_stream('moos','eurathlon2015-underwater.sensors.customposepublisher.CustomPosePublisher',moos_port=9000)
+pose.add_stream('moos','eurathlon2015underwater.sensors.customposepublisher.CustomPosePublisher',moos_port=9000)
 jaune.append(pose)
 
 velocity = Velocity()
@@ -32,12 +32,12 @@ jaune.append(jauneactuator)
 gps=GPS()
 #gps.properties(latitude=42.95426460788653,longitude=10.60175534337759,altitude=0)
 gps.level('extended')
-gps.add_stream('moos','eurathlon2015-underwater.sensors.gpspublisher.GPSPublisher',moos_port=9000)
+gps.add_stream('moos','eurathlon2015underwater.sensors.gpspublisher.GPSPublisher',moos_port=9000)
 jaune.append(gps)
 
 jaune.add_default_interface('socket')
 
-env = Environment('../data/eurathlon2015-underwater/environment/map.blend', fastmode = False)
+env = Environment('../data/eurathlon2015underwater/environment/map.blend', fastmode = False)
 env.set_camera_location([-18.0, 6, 10.8])
 env.set_camera_rotation([1.09, 0, -3*3.14/4])
 env.set_camera_clip(clip_start=0.1, clip_end=2000)
