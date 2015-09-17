@@ -7,5 +7,5 @@ class Lejaune(GroundRobot):
     def __init__(self, name = None, debug = True):
 
         # lejaune.blend is located in the data/robots directory
-        GroundRobot.__init__(self, 'eurathlon/robots/lejaune.blend', name)
-        self.properties(classpath = "eurathlon.robots.lejaune.Lejaune")
+        GroundRobot.__init__(self, 'eurathlon2015underwater/robots/lejaune.blend', name)
+        self.properties(classpath = "eurathlon2015underwater.robots.lejaune.Lejaune")

@@ -13,3 +13,6 @@ class TritechMicronPublisher(AbstractMOOS):
             self.m.Notify("SONAR_CONNECTED", "true", cur_time)
         self.m.Notify("SONAR_RAW_DATA","bearing="+str(self.data['incidence'])+",ad_interval=0,scanline=0",cur_time)
         self.m.Notify("SONAR_DISTANCE","bearing="+str(self.data['incidence'])+",distance="+str(self.data['range']),cur_time)
+
+        # Here we fake the WallDetector algorithm
+        self.m.Notify("WALL_DETECTOR","bearing="+str(self.data['incidence'])+",distance="+str(self.data['range'])+",",cur_time)

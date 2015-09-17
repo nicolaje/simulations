@@ -4,7 +4,7 @@ from morse.builder.creator import SensorCreator, bpymorse
 from morse.builder.blenderobjects import *
 
 class Tritechmicron(LaserSensorWithArc):
-    _classpath = "eurathlon.sensors.tritechmicron.Tritechmicron"
+    _classpath = "eurathlon2015underwater.sensors.tritechmicron.Tritechmicron"
     _blendname = "tritechmicron"
 
     def __init__(self, name=None):
@@ -18,4 +18,4 @@ class Tritechmicron(LaserSensorWithArc):
                 scan_window = 10.0, resolution = 1.0)
         # set the frequency to 10 Hz
         self.frequency(25)
-        self.add_stream('moos','eurathlon.sensors.tritechmicronpublisher.TritechMicronPublisher',moos_port=9000)
+        self.add_stream('moos','eurathlon2015underwater.sensors.tritechmicronpublisher.TritechMicronPublisher',moos_port=9000)

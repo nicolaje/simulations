@@ -1,7 +1,7 @@
 #! /usr/bin/env morseexec
 
-from eurathlon.builder.robots import *
-from eurathlon.builder.actuators import *
+from eurathlon2015underwater.builder.robots import *
+from eurathlon2015underwater.builder.actuators import *
 from morse.builder import *
 import os
 
@@ -18,7 +18,7 @@ saucisse.rotate(0,0,0)
 jaune.add_default_interface('socket')
 saucisse.add_default_interface('socket')
 
-env = Environment('../data/eurathlon/environment/map.blend', fastmode = False)
+env = Environment('../data/eurathlon2015underwater/environment/map.blend', fastmode = False)
 env.set_camera_location([-18.0, 6, 10.8])
 env.set_camera_rotation([1.09, 0, -3*3.14/4])
 env.set_camera_clip(clip_start=0.1, clip_end=2000)
