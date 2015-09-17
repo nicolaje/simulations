@@ -23,6 +23,7 @@ velocity = Velocity()
 jaune.append(velocity)
 
 jauneactuator=Lejaunethruster()
+jauneactuator.add_stream('moos','eurathlon2015underwater.sensors')
 jaune.append(jauneactuator)
 
 # GPS
