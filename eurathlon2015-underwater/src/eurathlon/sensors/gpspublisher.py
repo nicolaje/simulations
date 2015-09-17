@@ -16,3 +16,4 @@ class GPSPublisher(AbstractMOOS):
         self.m.Notify("GPS_LONGITUDE",str(self.data['longitude']),cur_time)
         self.m.Notify("GPS_LATITUDE",str(self.data['latitude']),cur_time)
         self.m.Notify("GPS_NB_SAT","42",cur_time)
+        self.m.Notify("GPS_QUALITY","1",cur_time) # Fake that GPS is always good
